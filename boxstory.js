@@ -1,117 +1,5 @@
-const jsonDatum = [
-    {
-        "show": true,
-        "life_hour": 0.01,
-        "content_id": "9999-45t8yr34",
-        "side": "",
-        "position": "relative",
-        "z_index": "900",
-        "width": "500px",
-        "height": "300px",
-        "top": "0",
-        "left": "auto",
-        "bottom": "",
-        "margin": "200px auto",
-        "bgColor": "pink",
-        "border": "",
-        "border_radius": "0",
-        "box_shadow": "",
-        "backdrop": true,
-        "backdrop_specs": {
-            "rgba": "rgba(0,0,0,0.5)"
-        },
-        "remove_condition": {"condition": "timer", "value": 1},
-        "content": "<div style='width: 500px; text-align: center; margin:0 auto; height:100%; background-color: deeppink'><div style='text-align: left'>Deneme icerigi buraya gelecek</div><\/div>",
-        "animations": {
-            "box_remover":{
-                "animation_specs": {
-                },
-                "keyframes": "",
-                "remove_after":"true"
-            },
-            "turner": {
-                "animation_specs": {
-                    "animation-delay": "",
-                    "animation-duration": "0.7s",
-                    "animation-direction": "",
-                    "animation-play-state": ""
-                },
-                "keyframes": "0% {transform: rotate(0); opacity:1}" +
-                    "100% {transform: rotate(360deg); opacity:0}",
-                "remove_after":"true"
-            },
-            "first-load": {
-                "animation_specs": {
-                    "animation-delay": "",
-                    "animation-duration": "3s",
-                    "animation-direction": "",
-                    "animation-play-state": ""
-                },
-                "keyframes": "0% {left:-1600px;;}" +
-                    "100% {left:0}",
-                "remove_after":""
-            },
-            "slide-out": {
-                "animation_specs": {
-                    "animation-delay": "",
-                    "animation-duration": "1s",
-                    "animation-direction": "",
-                    "animation-play-state": ""
-                },
-                "keyframes": "0% {left:0;}" +
-                    "100% {left:-1600px;}",
-                "remove_after":"true"
 
-            },
-            "fly-down": {
-                "animation_specs": {
-                    "animation-delay": "",
-                    "animation-duration": "2s",
-                    "animation-direction": "",
-                    "animation-play-state": ""
-                },
-                "keyframes": "0% {top:-1500px;}" +
-                    "100% {top:200px;}"
-            },
-            "turn-in": {
-                "animation_specs": {
-                    "animation-duration": "1s",
-                },
-                "keyframes": "0% {transform: rotate(360deg); opacity:0; display:''}" +
-                    "100% {transform: rotate(0); opacity:1; display:''}"
-
-            }
-        },
-        "scenarios": {
-            "leaving_window":{
-                "event_source": "window",
-                "event": "mouseleave",
-                "animations": [
-                    {
-                        "animation_name":"fly-down",
-                        "repetative":false
-                    }
-                ],
-                "except":[]
-            }
-},
-        "close_button": "true",
-        "close_button_content": "<img src=\"https:\/\/www.ecanta.com.tr\/sources\/img\/close.svg\">",
-        "close_button_specs": {
-            "top": "0",
-            "right": "0",
-            "height": "20px",
-            "width": "20px",
-            "padding": "5px",
-            "margin": "1px",
-            "bgColor": "white",
-            "border": "0 solid black",
-            "title": "Kapat"
-        }
-    }
-]
-
-const WDC_box = {
+const boxStory = {
     expDateTime(lifeHour) {
         return new Date().getTime() + (lifeHour * 3600000)
     },
@@ -149,14 +37,14 @@ console.log(boxData.backdrop_specs.rgba)
             let topOfBox = boxData.top;
             switch (boxData.side) {
                 case "right":
-                    leftOfBox = WDC_box.vw() - parseInt(boxData.width);
+                    leftOfBox = boxStory.vw() - parseInt(boxData.width);
                     break;
                 case "left":
                     leftOfBox = 0;
                     break;
                 case "bottom":
-                    topOfBox = WDC_box.vh() - parseInt(boxData.height);
-                    leftOfBox = (WDC_box.vw() - parseInt(boxData.width)) / 2;
+                    topOfBox = boxStory.vh() - parseInt(boxData.height);
+                    leftOfBox = (boxStory.vw() - parseInt(boxData.width)) / 2;
                     break;
             }
 
@@ -216,7 +104,7 @@ console.log(boxData.backdrop_specs.rgba)
     },
     init(json_src) {
         let result = fetch(json_src).then(response => response.json()).then(data => {
-            jsonDatum.forEach((jsonData) => {
+            data.forEach((jsonData) => {
                 let registeredDateTime = window.localStorage.getItem("box_" + jsonData.content_id);
                 let expired = true;
                 window.localStorage.removeItem("box_" + data.content_id)
@@ -224,7 +112,7 @@ console.log(boxData.backdrop_specs.rgba)
                     expired = new Date().getTime() - parseInt(registeredDateTime) > 0
                 }
                 if (jsonData.show && expired) {
-                    WDC_box.createBox(jsonData);
+                    boxStory.createBox(jsonData);
                     this.action(jsonData)
                     //this.createAnimation(jsonData, 'first-load')
 
@@ -289,11 +177,11 @@ if(animationData.repetative==="true" || animationData.repetative){
         } else {
             document.querySelector('#box_' + boxData.content_id).remove();
         }
-        window.localStorage.setItem('box_' + boxData.content_id, WDC_box.expDateTime(boxData.life_hour));
+        window.localStorage.setItem('box_' + boxData.content_id, boxStory.expDateTime(boxData.life_hour));
     }
 }
 window.addEventListener('load', () => {
-    WDC_box.init('https://s69.wdc.center/?cc=2312&b_code=y5698u48ur3');
+    boxStory.init('https://raw.githubusercontent.com/caglarorhan/boxstory/master/stories.json');
 })
 
 

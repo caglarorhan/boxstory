@@ -36,8 +36,7 @@
           "animation-direction": "",
           "animation-play-state": ""
         },
-        "keyframes": "0% {transform: rotate(0); opacity:1}" +
-        "100% {transform: rotate(360deg); opacity:0}",
+        "keyframes": "0% {transform: rotate(0); opacity:1} 100% {transform: rotate(360deg); opacity:0}",
         "remove_after":"true"
       },
       "first-load": {
@@ -47,8 +46,7 @@
           "animation-direction": "",
           "animation-play-state": ""
         },
-        "keyframes": "0% {left:-1600px;;}" +
-        "100% {left:0}",
+        "keyframes": "0% {left:-1600px;;} 100% {left:0}",
         "remove_after":""
       },
       "slide-out": {
@@ -70,15 +68,13 @@
           "animation-direction": "",
           "animation-play-state": ""
         },
-        "keyframes": "0% {top:-1500px;}" +
-        "100% {top:200px;}"
+        "keyframes": "0% {top:-1500px;} 100% {top:200px;}"
       },
       "turn-in": {
         "animation_specs": {
           "animation-duration": "1s",
         },
-        "keyframes": "0% {transform: rotate(360deg); opacity:0; display:''}" +
-        "100% {transform: rotate(0); opacity:1; display:''}"
+        "keyframes": "0% {transform: rotate(360deg); opacity:0; display:''} 100% {transform: rotate(0); opacity:1; display:''}"
 
       }
     },
