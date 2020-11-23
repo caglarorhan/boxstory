@@ -56,8 +56,7 @@
           "animation-direction": "",
           "animation-play-state": ""
         },
-        "keyframes": "0% {left:0;}" +
-        "100% {left:-1600px;}",
+        "keyframes": "0% {left:0;} 100% {left:-1600px;}",
         "remove_after":"true"
 
       },
