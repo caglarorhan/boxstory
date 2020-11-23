@@ -91,7 +91,7 @@
       }
     },
     "close_button": "true",
-    "close_button_content": "<img src=\"https:\/\/raw.githubusercontent.com\/caglarorhan\/boxstory\/master\/close.svg"\>",
+    "close_button_content": "<img src=\"https:\/\/raw.githubusercontent.com\/caglarorhan\/boxstory\/master\/close.svg\">",
     "close_button_specs": {
       "top": "0",
       "right": "0",
