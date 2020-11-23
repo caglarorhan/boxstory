@@ -180,9 +180,7 @@ if(animationData.repetative==="true" || animationData.repetative){
         window.localStorage.setItem('box_' + boxData.content_id, boxStory.expDateTime(boxData.life_hour));
     }
 }
-window.addEventListener('load', () => {
-    boxStory.init('https://raw.githubusercontent.com/caglarorhan/boxstory/master/stories.json');
-})
+
 
 
 
