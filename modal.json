@@ -84,10 +84,10 @@
         "animations": [
           {
             "animation_name":"fly-down",
-            "repetative":false
+            "repetative":true
           }
         ],
-        "except":[]
+        "except":["#box"]
       }
     },
     "close_button": "true",

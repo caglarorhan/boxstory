@@ -53,9 +53,7 @@ console.log(boxData.backdrop_specs.rgba)
             box.id = 'box_' + boxData.content_id;
             box.innerHTML = boxData.content;
             box.append(boxCloseButton);
-            box.addEventListener('click',e=>{
-                e.stopPropagation()
-            })
+
             if (document.querySelector('#backdrop_' + boxData.content_id)) {
                 document.querySelector('#backdrop_' + boxData.content_id).append(box);
                 document.querySelector('#backdrop_' + boxData.content_id).style.display='none';

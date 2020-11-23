@@ -17,9 +17,7 @@
     "border_radius": "0",
     "box_shadow": "",
     "backdrop": false,
-    "backdrop_specs": {
-      "rgba": "rgba(0,0,0,0.5)"
-    },
+    "backdrop_specs": {},
     "remove_condition": {"condition": "timer", "value": 1},
     "content": "<div style='width: 500px; text-align: center; margin:0 auto; height:100%; background-color: deeppink'><div style='text-align: left'>Deneme icerigi buraya gelecek</div><\/div>",
     "animations": {
@@ -80,7 +78,7 @@
     "scenarios": {
       "leaving_window":{
         "event_source": "window",
-        "event": "mouseleave",
+        "event": "load",
         "animations": [
           {
             "animation_name":"fly-down",
