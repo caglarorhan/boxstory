@@ -2,8 +2,8 @@
   {
     "show": true,
     "life_hour": 0.01,
-    "content_id": "9999-45t8yr34",
-    "side": "",
+    "content_id": "6546-45t8yr34",
+    "side": "top",
     "position": "relative",
     "z_index": "900",
     "width": "500px",
@@ -11,12 +11,12 @@
     "top": "0",
     "left": "auto",
     "bottom": "",
-    "margin": "200px auto",
+    "margin": "",
     "bgColor": "pink",
     "border": "",
     "border_radius": "0",
     "box_shadow": "",
-    "backdrop": true,
+    "backdrop": false,
     "backdrop_specs": {
       "rgba": "rgba(0,0,0,0.5)"
     },
