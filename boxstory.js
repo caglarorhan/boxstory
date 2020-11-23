@@ -132,9 +132,6 @@ console.log(boxData.backdrop_specs.rgba)
                     scenario.animations.forEach(animationData => {
                         this.createAnimation(boxData, animationData.animation_name);
 
-
-
-
                         //repetative degerine gore tek sefer iplemente edilecek veya requestAnimationFrame kullanilacak
 document.querySelector("#box_" + boxData.content_id).classList.remove(animationData.animation_name + "_" + boxData.content_id);
 if(animationData.repetative==="true" || animationData.repetative){
@@ -146,10 +143,6 @@ if(animationData.repetative==="true" || animationData.repetative){
 }else{
     document.querySelector("#box_" + boxData.content_id).classList.add(animationData.animation_name + "_" + boxData.content_id);
 }
-
-
-
-
                         document.querySelector("#box_" + boxData.content_id).addEventListener('animationend', () => {
                             if (boxData.animations[animationData.animation_name].remove_after==="true" || boxData.animations[animationData.animation_name].remove_after) {
                                 this.removeBox(boxData)
@@ -159,8 +152,6 @@ if(animationData.repetative==="true" || animationData.repetative){
 
                     })
                 })
-
-
             //exceptions (for event bubbling)
             scenario.except.forEach(itemIdPrefix=>{
                 document.querySelector(itemIdPrefix + boxData.content_id).addEventListener(scenario.event,(e)=>{
