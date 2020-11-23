@@ -71,7 +71,7 @@
       },
       "turn-in": {
         "animation_specs": {
-          "animation-duration": "1s",
+          "animation-duration": "1s"
         },
         "keyframes": "0% {transform: rotate(360deg); opacity:0; display:''} 100% {transform: rotate(0); opacity:1; display:''}"
 
