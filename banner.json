@@ -4,10 +4,10 @@
     "life_hour": 0.01,
     "content_id": "6546-45t8yr34",
     "side": "top",
-    "position": "relative",
+    "position": "absolute",
     "z_index": "900",
-    "width": "500px",
-    "height": "300px",
+    "width": "100%",
+    "height": "200px",
     "top": "0",
     "left": "auto",
     "bottom": "",
@@ -19,7 +19,7 @@
     "backdrop": false,
     "backdrop_specs": {},
     "remove_condition": {"condition": "timer", "value": 1},
-    "content": "<div style='width: 500px; text-align: center; margin:0 auto; height:100%; background-color: deeppink'><div style='text-align: left'>Deneme icerigi buraya gelecek</div><\/div>",
+    "content": "<div style='width: 100%; text-align: center; margin:0 auto; height:100%; background-color: deeppink'><div style='text-align: left'>Deneme icerigi buraya gelecek</div><\/div>",
     "animations": {
       "box_remover":{
         "animation_specs": {
@@ -66,13 +66,6 @@
           "animation-play-state": ""
         },
         "keyframes": "0% {top:-1500px;} 100% {top:200px;}"
-      },
-      "turn-in": {
-        "animation_specs": {
-          "animation-duration": "1s"
-        },
-        "keyframes": "0% {transform: rotate(360deg); opacity:0; display:''} 100% {transform: rotate(0); opacity:1; display:''}"
-
       }
     },
     "scenarios": {
