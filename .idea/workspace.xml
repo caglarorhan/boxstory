@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/banner.json" beforeDir="false" afterPath="$PROJECT_DIR$/banner.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boxstory.js" beforeDir="false" afterPath="$PROJECT_DIR$/boxstory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modal.json" beforeDir="false" afterPath="$PROJECT_DIR$/modal.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +49,9 @@
       <option name="presentableId" value="Default" />
       <updated>1606104772917</updated>
       <workItem from="1606104774082" duration="7148000" />
-      <workItem from="1606154670844" duration="1867000" />
+      <workItem from="1606154670844" duration="8162000" />
+      <workItem from="1606241202382" duration="10369000" />
+      <workItem from="1606326411073" duration="2316000" />
     </task>
     <servers />
   </component>

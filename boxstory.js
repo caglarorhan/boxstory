@@ -1,4 +1,3 @@
-
 const boxStory = {
     expDateTime(lifeHour) {
         return new Date().getTime() + (lifeHour * 3600000)
@@ -13,7 +12,6 @@ const boxStory = {
         const backDrop = document.createElement('div');
         const boxCloseButton = document.createElement('span');
         const box = document.createElement('div');
-console.log(boxData.backdrop_specs.rgba)
         if (boxData.backdrop === true || boxData.backdrop === "true") {
             backDrop.style.cssText = `width:100%; height:100%; overflow:hidden; position: fixed; z-index:${boxData.z_index};left:0;top:0; background-color: ${boxData.backdrop_specs.rgba};`;
             backDrop.id = 'backdrop_' + boxData.content_id;
@@ -48,11 +46,14 @@ console.log(boxData.backdrop_specs.rgba)
                     break;
             }
 
-
             box.style.cssText = `width:${widthOfBox}; height: ${boxData.height}; left:${leftOfBox}px; top:${topOfBox}px; position:${boxData.position}; margin:${boxData.margin}; background-color:${boxData.bgColor}; z-index: ${boxData.z_index} border-radius:${boxData.border_radius}; border: ${boxData.border}; box-shadow:${boxData.box_shadow} ; box-sizing: border-box;`;
             box.id = 'box_' + boxData.content_id;
             box.innerHTML = boxData.content;
             box.append(boxCloseButton);
+
+            box.addEventListener('click',event=>{
+                event.stopPropagation();
+            })
 
             if (document.querySelector('#backdrop_' + boxData.content_id)) {
                 document.querySelector('#backdrop_' + boxData.content_id).append(box);
@@ -61,15 +62,12 @@ console.log(boxData.backdrop_specs.rgba)
                 document.body.insertAdjacentElement('afterbegin', box);
                 document.querySelector('#box_' + boxData.content_id).style.display='none';
             }
-
     },
     createAnimation(boxData, animationName) {
-        console.log('create animation triggered');
         if(!document.querySelector('#box_' + boxData.content_id)){
             this.createBox(boxData);
         }
-        document.querySelector('#backdrop_' + boxData.content_id).style.display='';
-        document.querySelector('#box_' + boxData.content_id).style.display='';
+
         const targetCSS = document.createElement('style');
         let animationSpecsText = "";
         console.log(animationName)
@@ -86,18 +84,12 @@ console.log(boxData.backdrop_specs.rgba)
             @keyframes ${animationName} {
                                ${boxData.animations[animationName].keyframes}
                                 }
+                               
             `;
         // CSS rule control
-        console.log(`
-        hedef class name: ${animationName + "_" + boxData.content_id}
-        
-        `)
-
-
         if(!Object.values(document.styleSheets).map(rlz=>rlz.rules[0].selectorText).includes("."+animationName + "_" + boxData.content_id)){
             document.head.append(targetCSS);
         }
-
 
     },
     init(json_src) {
@@ -112,8 +104,6 @@ console.log(boxData.backdrop_specs.rgba)
                 if (jsonData.show && expired) {
                     boxStory.createBox(jsonData);
                     this.action(jsonData)
-                    //this.createAnimation(jsonData, 'first-load')
-
                 } else {
                     return false;
                 }
@@ -122,45 +112,60 @@ console.log(boxData.backdrop_specs.rgba)
         })
     },
     action(boxData){
-        console.log('action triggered');
+        console.log('action giris')
         Object.keys(boxData.scenarios).forEach(scenarioName=>{
             let scenario = boxData.scenarios[scenarioName];
-            console.log(scenarioName);
             const triggerElement = (scenario.event_source!=="window")?document.querySelector(scenario.event_source + boxData.content_id):document;
 
-            if(scenario.event_source==="window" && scenario.event_source==='load'){
-                this.createAnimation(boxData, animationData.animation_name);
-            }else{
-                triggerElement.addEventListener(scenario.event,()=>{
-                    scenario.animations.forEach(animationData => {
-                        this.createAnimation(boxData, animationData.animation_name);
-
-                        //repetative degerine gore tek sefer iplemente edilecek veya requestAnimationFrame kullanilacak
-                        document.querySelector("#box_" + boxData.content_id).classList.remove(animationData.animation_name + "_" + boxData.content_id);
-                        if(animationData.repetative==="true" || animationData.repetative){
-                            window.requestAnimationFrame(function(time) {
-                                window.requestAnimationFrame(function(time) {
-                                    document.querySelector("#box_" + boxData.content_id).classList.add(animationData.animation_name + "_" + boxData.content_id);
-                                });
-                            });
-                        }else{
+                    scenario.animations.forEach((animationData, animIndex) => {
+                        this.createAnimation(boxData, animationData.animation_name); //CSS animasyonlari olusturulup style icine gomuldu
+                        console.log('--->'+scenario.event_source +':'+ scenario.event);
+                        if(scenario.event_source==="window" && scenario.event==='load'){ // window.load ise dogrudan class ekle (CSS animasyon olusmustu zaten)
+                            console.log('evet')
+                            document.querySelector("#box_" + boxData.content_id).style.display='';
                             document.querySelector("#box_" + boxData.content_id).classList.add(animationData.animation_name + "_" + boxData.content_id);
                         }
-                        document.querySelector("#box_" + boxData.content_id).addEventListener('animationend', () => {
-                            if (boxData.animations[animationData.animation_name].remove_after==="true" || boxData.animations[animationData.animation_name].remove_after) {
-                                this.removeBox(boxData)
+                        // animation applicator
+                        function animApplicator(){
+                            document.querySelector("#box_" + boxData.content_id).classList.remove(animationData.animation_name + "_" + boxData.content_id);
+                            if (animationData.repetitive === "true" || animationData.repetitive) {
+                                window.requestAnimationFrame(function (time) {
+                                    window.requestAnimationFrame(function (time) {
+                                        if(boxData.backdrop || boxData.backdrop ==='true'){
+                                            document.querySelector('#backdrop_' + boxData.content_id).style.display='block';
+                                        }
+                                        document.querySelector('#box_' + boxData.content_id).style.display='block';
+                                        document.querySelector("#box_" + boxData.content_id).classList.add(animationData.animation_name + "_" + boxData.content_id);
+                                    });
+                                });
+                            } else {
+                                document.querySelector('#box_' + boxData.content_id).style.display='block';
+                                document.querySelector("#box_" + boxData.content_id).classList.add(animationData.animation_name + "_" + boxData.content_id);
                             }
-                        });
+                        }
+                        //repetative degerine gore tek sefer implemente edilecek veya requestAnimationFrame kullanilacak
+                        triggerElement.addEventListener(scenario.event,animApplicator)
 
+                        document.querySelector("#box_" + boxData.content_id).addEventListener('animationend', () => {
+                            console.log('animasyon bitti');
+                            if (boxData.animations[animationData.animation_name].remove_after==="true" || boxData.animations[animationData.animation_name].remove_after===true) {
+                                this.removeBox(boxData)
+                                console.log('sadece animasyon bitti')
 
+                            }
+                                if(animIndex===scenario.animations.length-1){
+                                    //senaryonun son animasyonu ve bu animasyon repetetive degilse eventlistener iptal edilecek
+                                    triggerElement.removeEventListener(scenario.event, animApplicator, {passive:false});
+                                    //*******************************************************************************************
+                                }
+                        }
+                        );
                     })
-                })
-            }
-
             //exceptions (for event bubbling)
             scenario.except.forEach(itemIdPrefix=>{
-                document.querySelector(itemIdPrefix + boxData.content_id).addEventListener(scenario.event,(e)=>{
-                    e.stopPropagation();
+                console.log(itemIdPrefix +'_' + boxData.content_id);
+                document.querySelector(itemIdPrefix +'_' + boxData.content_id).addEventListener(scenario.event,(event)=>{
+                    event.stopPropagation();
                 })
             })
         })
@@ -174,9 +179,3 @@ console.log(boxData.backdrop_specs.rgba)
         window.localStorage.setItem('box_' + boxData.content_id, boxStory.expDateTime(boxData.life_hour));
     }
 }
-
-
-
-
-
-

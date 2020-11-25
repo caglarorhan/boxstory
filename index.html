@@ -5,12 +5,19 @@
     <title>Title</title>
     <script src="boxstory.js"></script>
     <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const rootSrcNo = parseInt(urlParams.get('rootno'));
+        const jsonFileName = urlParams.get('srcjson').toString();
+        const roots = ['','https://raw.githubusercontent.com/caglarorhan/boxstory/master/'];
+        const jsonFiles= {
+            "modal":"modal.json",
+            "banner":"banner.json",
+            "bottom":"bottom.json",
+            "leftbox":"leftbox.json",
+            "rightbox":"rightbox.json"}
+
         window.addEventListener('load', () => {
-            //boxStory.init('https://raw.githubusercontent.com/caglarorhan/boxstory/master/modal.json');
-            boxStory.init('https://raw.githubusercontent.com/caglarorhan/boxstory/master/banner.json');
-            //boxStory.init('https://raw.githubusercontent.com/caglarorhan/boxstory/master/bottom.json');
-            //boxStory.init('https://raw.githubusercontent.com/caglarorhan/boxstory/master/leftbox.json');
-            //boxStory.init('https://raw.githubusercontent.com/caglarorhan/boxstory/master/rightbox.json');
+            boxStory.init(roots[rootSrcNo] + jsonFiles[jsonFileName]);
         })
     </script>
 

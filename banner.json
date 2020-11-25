@@ -4,7 +4,7 @@
     "life_hour": 0.01,
     "content_id": "6546-45t8yr34",
     "side": "top",
-    "position": "absolute",
+    "position": "relative",
     "z_index": "900",
     "width": "100%",
     "height": "200px",
@@ -12,7 +12,7 @@
     "left": "auto",
     "bottom": "",
     "margin": "",
-    "bgColor": "pink",
+    "bgColor": "purple",
     "border": "",
     "border_radius": "0",
     "box_shadow": "",
@@ -65,11 +65,11 @@
           "animation-direction": "",
           "animation-play-state": ""
         },
-        "keyframes": "0% {top:-1500px;} 100% {top:200px;}"
+        "keyframes": "0% {top:-300px;} 100% {top:0;}"
       }
     },
     "scenarios": {
-      "leaving_window":{
+      "loading_window":{
         "event_source": "window",
         "event": "load",
         "animations": [
