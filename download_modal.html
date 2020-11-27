@@ -5,19 +5,8 @@
     <title>Title</title>
     <script src="boxstory.js"></script>
     <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const rootSrcNo = parseInt(urlParams.get('rootno'));
-        const jsonFileName = urlParams.get('srcjson').toString();
-        const roots = ['','https://raw.githubusercontent.com/caglarorhan/boxstory/master/'];
-        const jsonFiles= {
-            "modal":"modal.json",
-            "banner":"banner.json",
-            "bottom":"bottom.json",
-            "leftbox":"leftbox.json",
-            "rightbox":"rightbox.json"}
-
         window.addEventListener('load', () => {
-            boxStory.init(roots[rootSrcNo] + jsonFiles[jsonFileName]);
+            boxStory.init('download_modal.json');
         })
     </script>
 
@@ -35,7 +24,7 @@
     velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
     enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
     consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
-    <button id="downloadModalTriggerButton">DOWNLOAD</button>
+    <button id="downloadModalTriggerButton_dl-45t8yr34">DOWNLOAD</button>
 </p>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

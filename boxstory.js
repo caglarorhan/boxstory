@@ -116,7 +116,7 @@ const boxStory = {
         console.log('action giris')
         Object.keys(boxData.scenarios).forEach(scenarioName=>{
             let scenario = boxData.scenarios[scenarioName];
-            const triggerElement = (scenario.event_source!=="window")?document.querySelector(scenario.event_source + boxData.content_id):document;
+            const triggerElement = (scenario.event_source!=="window")?document.querySelector(scenario.event_source +'_' + boxData.content_id):document;
 
                     scenario.animations.forEach((animationData, animIndex) => {
                         this.createAnimation(boxData, animationData.animation_name); //CSS animasyonlari olusturulup style icine gomuldu
