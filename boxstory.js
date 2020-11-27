@@ -41,6 +41,7 @@ const boxStory = {
                     leftOfBox = 0;
                     break;
                 case "bottom":
+                    console.log('Bottom geldi')
                     topOfBox = boxStory.vh() - parseInt(boxData.height);
                     leftOfBox = (boxStory.vw() - parseInt(boxData.width)) / 2;
                     break;

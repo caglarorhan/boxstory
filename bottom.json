@@ -2,88 +2,44 @@
   {
     "show": true,
     "life_hour": 0.01,
-    "content_id": "9999-45t8yr34",
-    "side": "",
-    "position": "relative",
+    "content_id": "65589-45t8yr34",
+    "side": "bottom",
+    "position": "fixed",
     "z_index": "900",
     "width": "500px",
-    "height": "300px",
+    "height": "100px",
     "top": "0",
     "left": "auto",
-    "bottom": "",
-    "margin": "200px auto",
+    "bottom": "0",
+    "margin": "",
     "bgColor": "pink",
     "border": "",
     "border_radius": "0",
     "box_shadow": "",
-    "backdrop": true,
-    "backdrop_specs": {
-      "rgba": "rgba(0,0,0,0.5)"
-    },
+    "backdrop": false,
+    "backdrop_specs": {},
     "remove_condition": {"condition": "timer", "value": 1},
     "content": "<div style='width: 500px; text-align: center; margin:0 auto; height:100%; background-color: deeppink'><div style='text-align: left'>Deneme icerigi buraya gelecek</div><\/div>",
     "animations": {
-      "box_remover":{
-        "animation_specs": {
-        },
-        "keyframes": "",
-        "remove_after":"true"
-      },
-      "turner": {
-        "animation_specs": {
-          "animation-delay": "",
-          "animation-duration": "0.7s",
-          "animation-direction": "",
-          "animation-play-state": ""
-        },
-        "keyframes": "0% {transform: rotate(0); opacity:1} 100% {transform: rotate(360deg); opacity:0}",
-        "remove_after":"true"
-      },
-      "first-load": {
-        "animation_specs": {
-          "animation-delay": "",
-          "animation-duration": "3s",
-          "animation-direction": "",
-          "animation-play-state": ""
-        },
-        "keyframes": "0% {left:-1600px;;} 100% {left:0}",
-        "remove_after":""
-      },
-      "slide-out": {
-        "animation_specs": {
-          "animation-delay": "",
-          "animation-duration": "1s",
-          "animation-direction": "",
-          "animation-play-state": ""
-        },
-        "keyframes": "0% {left:0;} 100% {left:-1600px;}",
-        "remove_after":"true"
-
-      },
-      "fly-down": {
+      "rise-up": {
         "animation_specs": {
           "animation-delay": "",
           "animation-duration": "2s",
           "animation-direction": "",
           "animation-play-state": ""
         },
-        "keyframes": "0% {top:-1500px;} 100% {top:200px;}"
-      },
-      "turn-in": {
-        "animation_specs": {
-          "animation-duration": "1s"
-        },
-        "keyframes": "0% {transform: rotate(360deg); opacity:0; display:''} 100% {transform: rotate(0); opacity:1; display:''}"
+        "keyframes": "0% {left:-300px;} 100% {}",
+        "remove_after":"false"
 
       }
     },
     "scenarios": {
       "leaving_window":{
         "event_source": "window",
-        "event": "mouseleave",
+        "event": "load",
         "animations": [
           {
-            "animation_name":"fly-down",
+            "animation_name":"rise-up",
             "repetative":false
           }
         ],
