@@ -84,7 +84,7 @@
         "animations": [
           {
             "animation_name":"fly-down",
-            "repetative":false
+            "repetitive":false
           }
         ],
         "except":[]

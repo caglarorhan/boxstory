@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8f45549-cdb8-4c25-91f1-1bb3a2e2f8e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/download_modal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_modal.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/click_the_tip.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/click_the_tip.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boxstory.js" beforeDir="false" afterPath="$PROJECT_DIR$/boxstory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/banner.json" beforeDir="false" afterPath="$PROJECT_DIR$/banner.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bottom.json" beforeDir="false" afterPath="$PROJECT_DIR$/bottom.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leftbox.json" beforeDir="false" afterPath="$PROJECT_DIR$/leftbox.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rightbox.json" beforeDir="false" afterPath="$PROJECT_DIR$/rightbox.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +55,7 @@
       <workItem from="1606241202382" duration="10369000" />
       <workItem from="1606326411073" duration="3790000" />
       <workItem from="1606446319665" duration="2288000" />
-      <workItem from="1606513064485" duration="1380000" />
+      <workItem from="1606513064485" duration="5708000" />
     </task>
     <servers />
   </component>
