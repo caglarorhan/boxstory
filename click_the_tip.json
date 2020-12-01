@@ -1,51 +1,85 @@
 [
   {
-    "show": true,
+    "show": "true",
     "life_hour": 0.01,
-    "content_id": "65589-45t8yr34",
+    "content_id": "AAAAAAAA",
     "side": "bottom",
     "position": "fixed",
     "z_index": "900",
-    "width": "500px",
+    "width": "900",
     "height": "100px",
-    "top": "0",
+    "top": "100px",
     "left": "auto",
-    "bottom": "0",
+    "bottom": "",
     "margin": "",
     "bgColor": "pink",
     "border": "",
     "border_radius": "0",
     "box_shadow": "",
-    "backdrop": false,
+    "backdrop": "false",
     "backdrop_specs": {},
     "remove_condition": {"condition": "timer", "value": 1},
-    "content": "<div style='width: 500px; text-align: center; margin:0 auto; height:100%; background-color: deeppink'><div style='text-align: left'>Deneme icerigi buraya gelecek</div><\/div>",
+    "content": "<div style='width: 100%; text-align: center; margin:0 auto; height:100%; background-color: deeppink'><div style='text-align: left'><label for=\"mySwitch_AAAAAAAA\" style='background-color:deeppink; position: absolute; top:-27px;  cursor:pointer; color: white; font-weight:bold; padding: 5px;'><input type=\"checkbox\" id=\"mySwitch_AAAAAAAA\" style=\"display:none\">Turn Me On Baby</label><br>Deneme icerigi buraya gelecek</div><\/div>",
     "animations": {
-      "rise-up": {
+      "be": {
         "animation_specs": {
           "animation-delay": "",
-          "animation-duration": "5s",
+          "animation-duration": "0.1s",
           "animation-direction": "",
           "animation-play-state": ""
         },
-        "keyframes": "0% {bottom:-300px;} 100% {}",
+        "keyframes": "0% {} 100% {}",
+        "remove_after":"false"
+      },
+      "rise-up": {
+        "animation_specs": {
+          "animation-delay": "",
+          "animation-duration": "1s",
+          "animation-direction": "",
+          "animation-play-state": "",
+          "animation-fill-mode": "forwards"
+        },
+        "keyframes": "0% {} 100% {transform: translateY(-100px);}",
+        "remove_after":"false"
+      },
+      "go-down": {
+        "animation_specs": {
+          "animation-delay": "",
+          "animation-duration": "1s",
+          "animation-direction": "",
+          "animation-play-state": "",
+          "animation-fill-mode": "forwards"
+        },
+        "keyframes": "0% {transform: translateY(-100px);} 100% {transform: translateY(0);}",
         "remove_after":"false"
       }
     },
     "scenarios": {
-      "opener_switch":{
+      "first_opening":{
         "event_source": "window",
         "event": "load",
         "animations": [
           {
-            "animation_name":"rise-up",
-            "repetitive":false
+            "animation_name":["be"],
+            "repetitive":"false"
           }
         ],
         "except":[]
+      },
+      "bottom_menu":{
+        "event_source": "#mySwitch",
+        "event": "click",
+        "animations": [
+          {
+            "switch_id": "#mySwitch",
+            "animation_name":["rise-up","go-down"],
+            "repetitive":"false"
+          }
+        ],
+        "except":["#box"]
       }
     },
-    "close_button": "true",
+    "close_button": "false",
     "close_button_content": "<img src=\"https:\/\/www.ecanta.com.tr\/sources\/img\/close.svg\">",
     "close_button_specs": {
       "top": "0",
@@ -57,11 +91,6 @@
       "bgColor": "white",
       "border": "0 solid black",
       "title": "Kapat"
-    },
-    "click_tip": "true",
-    "click_tip_specs": {
-      "size": "10",
-      "id": ""
     }
   }
 ]
