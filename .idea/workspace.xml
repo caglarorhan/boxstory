@@ -4,7 +4,7 @@
     <list default="true" id="a8f45549-cdb8-4c25-91f1-1bb3a2e2f8e5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boxstory.js" beforeDir="false" afterPath="$PROJECT_DIR$/boxstory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/click_the_tip.json" beforeDir="false" afterPath="$PROJECT_DIR$/click_the_tip.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/download_modal.json" beforeDir="false" afterPath="$PROJECT_DIR$/download_modal.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +54,9 @@
       <workItem from="1606513064485" duration="13781000" />
       <workItem from="1606600561051" duration="13046000" />
       <workItem from="1606668870033" duration="12962000" />
-      <workItem from="1606746836289" duration="19140000" />
+      <workItem from="1606746836289" duration="20503000" />
+      <workItem from="1606831404027" duration="3790000" />
+      <workItem from="1606878736064" duration="7343000" />
     </task>
     <servers />
   </component>
@@ -65,6 +67,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="282" y="0" width="810" height="1032" key="dock-window-1" timestamp="1606857944735">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="282" y="0" width="810" height="1032" key="dock-window-1/0.0.1920.1050/-1920.-115.1920.1050@0.0.1920.1050" timestamp="1606857944735" />
     <state width="600" height="440" key="javadoc.popup" timestamp="1606106314810">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

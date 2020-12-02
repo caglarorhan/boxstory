@@ -40,7 +40,7 @@
         "event": "click",
         "animations": [
           {
-            "animation_name":"fly-down",
+            "animation_name":["fly-down"],
             "repetitive":"false"
           }
         ],

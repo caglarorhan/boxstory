@@ -30,31 +30,11 @@ const boxStory = {
             })
         }
         //box creating...
-            let widthOfBox = boxData.width.includes('%') ? boxStory.vw()*(parseInt(boxData.width)/100) : boxData.width;
-            let leftOfBox =  boxData.left.includes('auto') ? (boxStory.vw()-widthOfBox)/2  :  boxData.left;
-            let topOfBox = boxData.top;
-            let tip_size=0;
 
+            let boxRecalculated = this.positionReCalculator(boxData);
 
-            switch (boxData.side) {
-                case "right":
-                    leftOfBox = boxStory.vw() - parseInt(widthOfBox);
-                    if(boxData.switch_id!==null || boxData.switch_id!==''){
-                        leftOfBox = boxStory.vw();
-                    }
-                    break;
-                case "left":
-                    leftOfBox = 0;
-                    break;
-                case "bottom":
-                    topOfBox = boxStory.vh() - parseInt(boxData.height);
-                    if(boxData.switch_id!==null || boxData.switch_id!==''){
-                        topOfBox = boxStory.vh();
-                    }
-                    break;
-            }
-
-            box.style.cssText = `width:${widthOfBox}px; height: ${boxData.height}; left:${leftOfBox}px; top:${topOfBox}px; position:${boxData.position}; margin:${boxData.margin}; background-color:${boxData.bgColor}; z-index: ${boxData.z_index} border-radius:${boxData.border_radius}; border: ${boxData.border}; box-shadow:${boxData.box_shadow} ; box-sizing: border-box;`;
+        console.log(boxRecalculated);
+            box.style.cssText = `width:${boxRecalculated.widthOfBox}px; height: ${boxData.height}; left:${boxRecalculated.leftOfBox}px; top:${boxRecalculated.topOfBox}px; position:${boxData.position}; margin:${boxData.margin}; background-color:${boxData.bgColor}; z-index: ${boxData.z_index} border-radius:${boxData.border_radius}; border: ${boxData.border}; box-shadow:${boxData.box_shadow} ; box-sizing: border-box;`;
             box.id = 'box_' + boxData.content_id;
             box.innerHTML = boxData.content;
             box.append(boxCloseButton);
@@ -66,6 +46,68 @@ const boxStory = {
                 document.body.insertAdjacentElement('afterbegin', box);
                 document.querySelector('#box_' + boxData.content_id).style.display='none';
             }
+            this.resizeTracker(boxData);
+    },
+    positionReCalculator(boxData){
+        console.log('Recalculation yapilacak!')
+        let widthOfBox = boxData.width.includes('%') ? boxStory.vw()*(parseInt(boxData.width)/100) : boxData.width;
+        let leftOfBox =  boxData.left.includes('auto') ? (boxStory.vw()-widthOfBox)/2  :  boxData.left;
+        let topOfBox = boxData.top;
+        let isThereAnySwitch = 0;
+
+        // is there any switch type animations (switching 2 animations) in all scenarios?
+        Object.values(boxData.scenarios).forEach(scenarioData=>{
+            Object.values(scenarioData.animations).forEach(animationData=>{
+                if(animationData.switch_id!==''){
+                    isThereAnySwitch = 1;
+                }
+            })
+        })
+
+        switch (boxData.side) {
+            case "right":
+                leftOfBox = boxStory.vw() - parseInt(widthOfBox);
+                if(Boolean(isThereAnySwitch)){
+                    leftOfBox = boxStory.vw();
+                }
+                break;
+            case "left":
+                leftOfBox = 0;
+                if(Boolean(isThereAnySwitch)){
+                    leftOfBox = 0 - parseInt(widthOfBox);
+                }
+                break;
+            case "bottom":
+                topOfBox = boxStory.vh() - parseInt(boxData.height);
+                if(Boolean(isThereAnySwitch)){
+                    topOfBox = boxStory.vh();
+                }
+                break;
+            case "top":
+                topOfBox = 0;
+                if(Boolean(isThereAnySwitch)){
+                    topOfBox = 0 - parseInt(boxData.height);
+                }
+                break;
+        }
+        return {
+            "widthOfBox":widthOfBox,
+            "leftOfBox":leftOfBox,
+            "topOfBox":topOfBox,
+            "isThereAnySwitch":isThereAnySwitch
+        }
+    },
+    resizeTracker(boxData){
+        window.addEventListener('resize',()=>{
+            console.log('Resize cagirildi');
+
+            let boxRecalculated = this.positionReCalculator(boxData);
+            console.log(boxRecalculated);
+            document.querySelector('#box_' + boxData.content_id).style.left=boxRecalculated.leftOfBox+'px';
+            document.querySelector('#box_' + boxData.content_id).style.top=boxRecalculated.topOfBox+'px';
+            document.querySelector('#box_' + boxData.content_id).style.width=boxRecalculated.widthOfBox+'px';
+
+        })
     },
     createAnimation(boxData, animationData) {
         if(!document.querySelector('#box_' + boxData.content_id)){
