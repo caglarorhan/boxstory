@@ -6,7 +6,7 @@
     "side": "top",
     "position": "fixed",
     "z_index": "900",
-    "width": "900",
+    "width": "900px",
     "height": "100px",
     "top": "100px",
     "left": "auto",
@@ -28,7 +28,7 @@
           "animation-direction": "",
           "animation-play-state": ""
         },
-        "keyframes": "0% {} 100% {}",
+        "keyframes": "0% {transform: translateY(-100px);} 100% {}",
         "remove_after":"false"
       },
       "rise-up": {

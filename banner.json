@@ -8,7 +8,7 @@
     "z_index": "900",
     "width": "100%",
     "height": "200px",
-    "top": "0",
+    "top": "200px",
     "left": "auto",
     "bottom": "",
     "margin": "",
@@ -21,51 +21,24 @@
     "remove_condition": {"condition": "timer", "value": 1},
     "content": "<div style='width: 100%; text-align: center; margin:0 auto; height:100%; background-color: deeppink'><div style='text-align: left'>Deneme icerigi buraya gelecek</div><\/div>",
     "animations": {
-      "box_remover":{
-        "animation_specs": {
-        },
-        "keyframes": "",
-        "remove_after":"true"
-      },
-      "turner": {
+      "be": {
         "animation_specs": {
           "animation-delay": "",
-          "animation-duration": "0.7s",
+          "animation-duration": "0.01s",
           "animation-direction": "",
           "animation-play-state": ""
         },
-        "keyframes": "0% {transform: rotate(0); opacity:1} 100% {transform: rotate(360deg); opacity:0}",
-        "remove_after":"true"
+        "keyframes": "",
+        "remove_after":"false"
       },
-      "first-load": {
+      "fly-down": {
         "animation_specs": {
           "animation-delay": "",
           "animation-duration": "3s",
           "animation-direction": "",
           "animation-play-state": ""
         },
-        "keyframes": "0% {left:-1600px;;} 100% {left:0}",
-        "remove_after":""
-      },
-      "slide-out": {
-        "animation_specs": {
-          "animation-delay": "",
-          "animation-duration": "1s",
-          "animation-direction": "",
-          "animation-play-state": ""
-        },
-        "keyframes": "0% {left:0;} 100% {left:-1600px;}",
-        "remove_after":"true"
-
-      },
-      "fly-down": {
-        "animation_specs": {
-          "animation-delay": "",
-          "animation-duration": "2s",
-          "animation-direction": "",
-          "animation-play-state": ""
-        },
-        "keyframes": "0% {top:-300px;} 100% {top:0;}"
+        "keyframes": "0% {transform: translateY(-200px);} 100% {}"
       }
     },
     "scenarios": {
@@ -74,7 +47,7 @@
         "event": "load",
         "animations": [
           {
-            "animation_name":"fly-down",
+            "animation_name":["fly-down"],
             "repetitive":false
           }
         ],

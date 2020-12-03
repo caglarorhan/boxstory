@@ -32,16 +32,16 @@ const boxStory = {
         //box creating...
 
             let boxRecalculated = this.positionReCalculator(boxData);
+        console.log(boxRecalculated)
 
-        console.log(boxRecalculated);
-            box.style.cssText = `width:${boxRecalculated.widthOfBox}px; height: ${boxData.height}; left:${boxRecalculated.leftOfBox}px; top:${boxRecalculated.topOfBox}px; position:${boxData.position}; margin:${boxData.margin}; background-color:${boxData.bgColor}; z-index: ${boxData.z_index} border-radius:${boxData.border_radius}; border: ${boxData.border}; box-shadow:${boxData.box_shadow} ; box-sizing: border-box;`;
+            box.style.cssText = `width:${boxRecalculated.widthOfBox}; height: ${boxData.height}; left:${boxRecalculated.leftOfBox}; top:${boxRecalculated.topOfBox}; position:${boxData.position}; margin:${boxData.margin}; background-color:${boxData.bgColor}; z-index: ${boxData.z_index} border-radius:${boxData.border_radius}; border: ${boxData.border}; box-shadow:${boxData.box_shadow} ; box-sizing: border-box;`;
             box.id = 'box_' + boxData.content_id;
             box.innerHTML = boxData.content;
             box.append(boxCloseButton);
 
             if (document.querySelector('#backdrop_' + boxData.content_id)) {
                 document.querySelector('#backdrop_' + boxData.content_id).append(box);
-                document.querySelector('#backdrop_' + boxData.content_id).style.display='none';
+                document.querySelector('#backdrop_' + boxData.content_id).style.display='block';
             } else {
                 document.body.insertAdjacentElement('afterbegin', box);
                 document.querySelector('#box_' + boxData.content_id).style.display='none';
@@ -49,16 +49,15 @@ const boxStory = {
             this.resizeTracker(boxData);
     },
     positionReCalculator(boxData){
-        console.log('Recalculation yapilacak!')
         let widthOfBox = boxData.width.includes('%') ? boxStory.vw()*(parseInt(boxData.width)/100) : boxData.width;
-        let leftOfBox =  boxData.left.includes('auto') ? (boxStory.vw()-widthOfBox)/2  :  boxData.left;
+        let leftOfBox =  boxData.left.includes('auto') ? ((boxStory.vw()-parseInt(widthOfBox))/2)  :  boxData.left;
         let topOfBox = boxData.top;
         let isThereAnySwitch = 0;
 
         // is there any switch type animations (switching 2 animations) in all scenarios?
         Object.values(boxData.scenarios).forEach(scenarioData=>{
             Object.values(scenarioData.animations).forEach(animationData=>{
-                if(animationData.switch_id!==''){
+                if(animationData.switch_id){
                     isThereAnySwitch = 1;
                 }
             })
@@ -92,17 +91,15 @@ const boxStory = {
         }
         return {
             "widthOfBox":widthOfBox,
-            "leftOfBox":leftOfBox,
-            "topOfBox":topOfBox,
+            "leftOfBox":leftOfBox+'px',
+            "topOfBox":topOfBox+'px',
             "isThereAnySwitch":isThereAnySwitch
         }
     },
     resizeTracker(boxData){
         window.addEventListener('resize',()=>{
-            console.log('Resize cagirildi');
 
             let boxRecalculated = this.positionReCalculator(boxData);
-            console.log(boxRecalculated);
             document.querySelector('#box_' + boxData.content_id).style.left=boxRecalculated.leftOfBox+'px';
             document.querySelector('#box_' + boxData.content_id).style.top=boxRecalculated.topOfBox+'px';
             document.querySelector('#box_' + boxData.content_id).style.width=boxRecalculated.widthOfBox+'px';
@@ -163,7 +160,6 @@ const boxStory = {
     },
     // animation applicator
     animApplicator(boxData, scenarioName, animationData){
-    let switchKey = document.querySelector(boxData.scenarios[scenarioName].event_source+'_'+boxData.content_id).checked;
 
     document.querySelector("#box_" + boxData.content_id).classList.remove(animationData.animation_name[this.switchPositionConvertor(boxData.scenarios[scenarioName].event_source+'_'+boxData.content_id)] + "_" + boxData.content_id);
     if (animationData.repetitive === "true" || animationData.repetitive===true) {
@@ -174,7 +170,6 @@ const boxStory = {
                 }
                 document.querySelector('#box_' + boxData.content_id).style.display='block';
 
-                console.log('Eklenecek olan animasyonun adi:'+animationData.animation_name[this.switchPositionConvertor(boxData.scenarios[scenarioName].event_source+'_'+boxData.content_id)] + "_" + boxData.content_id);
                 document.querySelector("#box_" + boxData.content_id).classList.add(animationData.animation_name[this.switchPositionConvertor(boxData.scenarios[scenarioName].event_source+'_'+boxData.content_id)] + "_" + boxData.content_id);
             });
         });

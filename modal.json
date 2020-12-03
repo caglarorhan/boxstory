@@ -23,24 +23,24 @@
     "remove_condition": {"condition": "timer", "value": 1},
     "content": "<div style='width: 500px; text-align: center; margin:0 auto; height:100%; background-color: deeppink'><div style='text-align: left'>Deneme icerigi buraya gelecek</div><\/div>",
     "animations": {
-      "fly-down": {
+      "be": {
         "animation_specs": {
           "animation-delay": "",
-          "animation-duration": "2s",
+          "animation-duration": "0.01s",
           "animation-direction": "",
           "animation-play-state": ""
         },
-        "keyframes": "0% {top:-1500px;} 100% {top:200px;}",
+        "keyframes": "0% {} 100% {display:''}",
         "remove_after":"false"
       }
     },
     "scenarios": {
-      "leaving_window":{
+      "firstLoad": {
         "event_source": "window",
-        "event": "mouseleave",
+        "event": "load",
         "animations": [
           {
-            "animation_name":"fly-down",
+            "animation_name":["be"],
             "repetitive":"false"
           }
         ],

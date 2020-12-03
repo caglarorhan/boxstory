@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8f45549-cdb8-4c25-91f1-1bb3a2e2f8e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/click_the_tip-left.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/click_the_tip-left.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/banner.json" beforeDir="false" afterPath="$PROJECT_DIR$/banner.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boxstory.js" beforeDir="false" afterPath="$PROJECT_DIR$/boxstory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/click_the_tip-top.json" beforeDir="false" afterPath="$PROJECT_DIR$/click_the_tip-top.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/download_modal.json" beforeDir="false" afterPath="$PROJECT_DIR$/download_modal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modal.json" beforeDir="false" afterPath="$PROJECT_DIR$/modal.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +60,7 @@
       <workItem from="1606746836289" duration="20503000" />
       <workItem from="1606831404027" duration="3790000" />
       <workItem from="1606878736064" duration="8295000" />
-      <workItem from="1606920447501" duration="1773000" />
+      <workItem from="1606920447501" duration="12872000" />
     </task>
     <servers />
   </component>
