@@ -2,21 +2,21 @@
   {
     "show": true,
     "life_hour": 0.001,
-    "content_id": "9999-45t8yr34",
-    "side": "",
-    "position": "relative",
+    "content_id": "dl-45t8yr34",
+    "side": "bottom",
+    "position": "fixed",
     "z_index": "900",
     "width": "500px",
     "height": "300px",
-    "top": "0",
+    "top": "auto",
     "left": "auto",
     "bottom": "",
     "margin": "200px auto",
     "bgColor": "pink",
     "border": "",
-    "border_radius": "15px",
+    "border_radius": "0",
     "box_shadow": "",
-    "backdrop": true,
+    "backdrop": "true",
     "backdrop_specs": {
       "rgba": "rgba(0,0,0,0.5)"
     },
@@ -26,7 +26,7 @@
       "be": {
         "animation_specs": {
           "animation-delay": "",
-          "animation-duration": "0.01s",
+          "animation-duration": "2s",
           "animation-direction": "",
           "animation-play-state": ""
         },
@@ -35,13 +35,13 @@
       }
     },
     "scenarios": {
-      "firstLoad": {
+      "first-load":{
         "event_source": "window",
         "event": "load",
         "animations": [
           {
             "animation_name":["be"],
-            "repetitive":"false"
+            "repetitive":"true"
           }
         ],
         "except":["#box"]

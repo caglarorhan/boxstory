@@ -1,49 +1,50 @@
 [
   {
     "show": true,
-    "life_hour": 0.01,
-    "content_id": "65589-45t8yr34",
-    "side": "bottom",
+    "life_hour": 0.001,
+    "content_id": "dl-45t8yr34",
+    "side": "left",
     "position": "fixed",
     "z_index": "900",
     "width": "500px",
-    "height": "100px",
+    "height": "300px",
     "top": "0",
     "left": "auto",
-    "bottom": "0",
-    "margin": "",
+    "bottom": "",
+    "margin": "200px auto",
     "bgColor": "pink",
     "border": "",
     "border_radius": "0",
     "box_shadow": "",
-    "backdrop": false,
-    "backdrop_specs": {},
+    "backdrop": "true",
+    "backdrop_specs": {
+      "rgba": "rgba(0,0,0,0.5)"
+    },
     "remove_condition": {"condition": "timer", "value": 1},
     "content": "<div style='width: 500px; text-align: center; margin:0 auto; height:100%; background-color: deeppink'><div style='text-align: left'>Deneme icerigi buraya gelecek</div><\/div>",
     "animations": {
-      "rise-up": {
+      "fly-down": {
         "animation_specs": {
           "animation-delay": "",
           "animation-duration": "2s",
           "animation-direction": "",
           "animation-play-state": ""
         },
-        "keyframes": "0% {left:-300px;} 100% {}",
+        "keyframes": "0% {top:-1000px; opacity:0;} 100% {top:0px; opacity:1;}",
         "remove_after":"false"
-
       }
     },
     "scenarios": {
-      "opener_switch":{
+      "leaving_window":{
         "event_source": "window",
         "event": "load",
         "animations": [
           {
-            "animation_name":"rise-up",
-            "repetitive":false
+            "animation_name":["fly-down"],
+            "repetitive":"true"
           }
         ],
-        "except":[]
+        "except":["#box"]
       }
     },
     "close_button": "true",
