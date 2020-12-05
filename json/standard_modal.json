@@ -2,9 +2,9 @@
   {
     "show": true,
     "life_hour": 0.001,
-    "content_id": "9999-45t8yr34",
+    "content_id": "dl-45t8yr34",
     "side": "",
-    "position": "relative",
+    "position": "fixed",
     "z_index": "900",
     "width": "500px",
     "height": "300px",
@@ -14,34 +14,34 @@
     "margin": "200px auto",
     "bgColor": "pink",
     "border": "",
-    "border_radius": "15px",
+    "border_radius": "0",
     "box_shadow": "",
-    "backdrop": true,
+    "backdrop": "true",
     "backdrop_specs": {
       "rgba": "rgba(0,0,0,0.5)"
     },
     "remove_condition": {"condition": "timer", "value": 1},
     "content": "<div style='width: 500px; text-align: center; margin:0 auto; height:100%; background-color: deeppink'><div style='text-align: left'>Deneme icerigi buraya gelecek</div><\/div>",
     "animations": {
-      "be": {
+      "fly-down": {
         "animation_specs": {
           "animation-delay": "",
-          "animation-duration": "0.01s",
+          "animation-duration": "2s",
           "animation-direction": "",
           "animation-play-state": ""
         },
-        "keyframes": "0% {} 100% {}",
+        "keyframes": "0% {top:-1000px; opacity:0;} 100% {top:0px; opacity:1;}",
         "remove_after":"false"
       }
     },
     "scenarios": {
-      "firstLoad": {
-        "event_source": "window",
-        "event": "load",
+      "leaving_window":{
+        "event_source": "#downloadModalTriggerButton",
+        "event": "click",
         "animations": [
           {
-            "animation_name":["be"],
-            "repetitive":"false"
+            "animation_name":["fly-down"],
+            "repetitive":"true"
           }
         ],
         "except":["#box"]

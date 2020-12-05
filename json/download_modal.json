@@ -4,7 +4,7 @@
     "life_hour": 0.001,
     "content_id": "dl-45t8yr34",
     "side": "",
-    "position": "relative",
+    "position": "fixed",
     "z_index": "900",
     "width": "500px",
     "height": "300px",
@@ -30,7 +30,7 @@
           "animation-direction": "",
           "animation-play-state": ""
         },
-        "keyframes": "0% {top:-1000px;} 100% {}",
+        "keyframes": "0% {top:-1000px; opacity:0;} 100% {top:0px; opacity:1;}",
         "remove_after":"false"
       }
     },
@@ -41,7 +41,7 @@
         "animations": [
           {
             "animation_name":["fly-down"],
-            "repetitive":"false"
+            "repetitive":"true"
           }
         ],
         "except":["#box"]

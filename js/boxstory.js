@@ -41,7 +41,7 @@ const boxStory = {
 
             if (document.querySelector('#backdrop_' + boxData.content_id)) {
                 document.querySelector('#backdrop_' + boxData.content_id).append(box);
-                document.querySelector('#backdrop_' + boxData.content_id).style.display='block';
+                document.querySelector('#backdrop_' + boxData.content_id).style.display='none';
             } else {
                 document.body.insertAdjacentElement('afterbegin', box);
                 document.querySelector('#box_' + boxData.content_id).style.display='none';
@@ -51,7 +51,7 @@ const boxStory = {
     positionReCalculator(boxData){
         let widthOfBox = boxData.width.includes('%') ? boxStory.vw()*(parseInt(boxData.width)/100) : boxData.width;
         let leftOfBox =  boxData.left.includes('auto') ? ((boxStory.vw()-parseInt(widthOfBox))/2)  :  boxData.left;
-        let topOfBox = boxData.top;
+        let topOfBox = parseInt(boxData.top);
         let isThereAnySwitch = 0;
 
         // is there any switch type animations (switching 2 animations) in all scenarios?
@@ -160,12 +160,14 @@ const boxStory = {
     },
     // animation applicator
     animApplicator(boxData, scenarioName, animationData){
-
+console.log('Anim applicatopr cagirildi')
     document.querySelector("#box_" + boxData.content_id).classList.remove(animationData.animation_name[this.switchPositionConvertor(boxData.scenarios[scenarioName].event_source+'_'+boxData.content_id)] + "_" + boxData.content_id);
     if (animationData.repetitive === "true" || animationData.repetitive===true) {
         window.requestAnimationFrame(function (time) {
             window.requestAnimationFrame(function (time) {
+                console.log('Okunan backdrop degeri:'+ boxData.backdrop)
                 if(boxData.backdrop === true || boxData.backdrop ==='true'){
+                    console.log('backdrop var')
                     document.querySelector('#backdrop_' + boxData.content_id).style.display='block';
                 }
                 document.querySelector('#box_' + boxData.content_id).style.display='block';
@@ -200,14 +202,15 @@ const boxStory = {
             //repetative degerine gore tek sefer implemente edilecek veya requestAnimationFrame kullanilacak
             // triggerElement.addEventListener(scenario.event,animApplicator());
             triggerElement.addEventListener(scenario.event,()=>{
+                console.log('Olay tetiklendi')
                 this.animApplicator(boxData,scenarioName,animationData);
             });
 
             document.querySelector("#box_" + boxData.content_id).addEventListener('animationend', () => {
                     if (boxData.animations[animationData.animation_name[0]].remove_after==="true" || boxData.animations[animationData.animation_name[this.switchPositionConvertor(boxData.scenarios[scenarioName].event_source+'_'+boxData.content_id)]].remove_after===true) {
                         this.removeBox(boxData)
-
                     }
+
                     if(animIndex===scenario.animations.length-1){
                         //senaryonun son animasyonu ve bu animasyon repetetive degilse eventlistener iptal edilecek
                         let isRepetitive = scenario.animations[animIndex].repetitive

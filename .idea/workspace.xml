@@ -2,12 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8f45549-cdb8-4c25-91f1-1bb3a2e2f8e5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/html/click_the_tip-right.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html/standard_modal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/click_the_tip-right.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/standard_modal.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/banner.json" beforeDir="false" afterPath="$PROJECT_DIR$/banner.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boxstory.js" beforeDir="false" afterPath="$PROJECT_DIR$/boxstory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/click_the_tip-top.json" beforeDir="false" afterPath="$PROJECT_DIR$/click_the_tip-top.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/download_modal.json" beforeDir="false" afterPath="$PROJECT_DIR$/download_modal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boxstory.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/boxstory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/click_the_tip-bottom.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/click_the_tip-bottom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/click_the_tip-bottom.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/click_the_tip-bottom.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/click_the_tip-left.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/click_the_tip-left.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/click_the_tip-left.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/click_the_tip-left.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/click_the_tip-top.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/click_the_tip-top.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/click_the_tip-top.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/click_the_tip-top.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/close.svg" beforeDir="false" afterPath="$PROJECT_DIR$/img/close.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/download_modal.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/download_modal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/download_modal.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/download_modal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leftbox.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/modal.json" beforeDir="false" afterPath="$PROJECT_DIR$/modal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rightbox.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,14 +43,22 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/json" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\boxstory\img" />
+      <recent name="C:\xampp\htdocs\boxstory\html" />
+      <recent name="C:\xampp\htdocs\boxstory\js" />
+      <recent name="C:\xampp\htdocs\boxstory\json" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\boxstory\json" />
+      <recent name="C:\xampp\htdocs\boxstory\html" />
       <recent name="C:\xampp\htdocs\boxstory" />
     </key>
   </component>
@@ -60,7 +81,9 @@
       <workItem from="1606746836289" duration="20503000" />
       <workItem from="1606831404027" duration="3790000" />
       <workItem from="1606878736064" duration="8295000" />
-      <workItem from="1606920447501" duration="12872000" />
+      <workItem from="1606920447501" duration="13514000" />
+      <workItem from="1607006631915" duration="8706000" />
+      <workItem from="1607101536980" duration="4554000" />
     </task>
     <servers />
   </component>
