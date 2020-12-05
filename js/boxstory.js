@@ -15,8 +15,8 @@ const boxStory = {
         if (boxData.backdrop === true || boxData.backdrop === "true") {
             backDrop.style.cssText = `width:100%; height:100%; overflow:hidden; position: fixed; z-index:${boxData.z_index};left:0;top:0; background-color: ${boxData.backdrop_specs.rgba};`;
             backDrop.id = 'backdrop_' + boxData.content_id;
-            backDrop.addEventListener('click',()=>{
-                this.removeBox(boxData);
+            backDrop.addEventListener('click',(event)=>{
+                this.removeBox(event,boxData);
             })
             document.body.append(backDrop);
         }
@@ -25,8 +25,8 @@ const boxStory = {
             boxCloseButton.title = boxData.close_button_specs.title;
             boxCloseButton.id = 'box_close_button_' + boxData.content_id;
             boxCloseButton.innerHTML = boxData.close_button_content;
-            boxCloseButton.addEventListener('click', ()=>{
-                this.removeBox(boxData);
+            boxCloseButton.addEventListener('click', (event)=>{
+                this.removeBox(event,boxData);
             })
         }
         //box creating...
@@ -39,6 +39,7 @@ const boxStory = {
             box.innerHTML = boxData.content;
             box.append(boxCloseButton);
 
+
             if (document.querySelector('#backdrop_' + boxData.content_id)) {
                 document.querySelector('#backdrop_' + boxData.content_id).append(box);
                 document.querySelector('#backdrop_' + boxData.content_id).style.display='none';
@@ -46,6 +47,9 @@ const boxStory = {
                 document.body.insertAdjacentElement('afterbegin', box);
                 document.querySelector('#box_' + boxData.content_id).style.display='none';
             }
+            document.querySelector('#box_' + boxData.content_id).addEventListener('click',(event)=>{
+                event.stopPropagation();
+            })
             this.resizeTracker(boxData);
     },
     positionReCalculator(boxData){
@@ -194,7 +198,10 @@ console.log('Anim applicatopr cagirildi')
             this.createAnimation(boxData, animationData); //CSS animasyonlari olusturulup style icine gomuldu
 
             if(scenario.event_source==="window" && scenario.event==='load'){ // window.load ise dogrudan class ekle (CSS animasyon olusmustu zaten)
-                document.querySelector("#backdrop_" + boxData.content_id).style.display='';
+                if(document.querySelector("#backdrop_" + boxData.content_id)){
+                    document.querySelector("#backdrop_" + boxData.content_id).style.display='';
+                }
+
                 document.querySelector("#box_" + boxData.content_id).style.display='';
                 document.querySelector("#box_" + boxData.content_id).classList.add(animationData.animation_name + "_" + boxData.content_id);
             }
@@ -202,13 +209,12 @@ console.log('Anim applicatopr cagirildi')
             //repetative degerine gore tek sefer implemente edilecek veya requestAnimationFrame kullanilacak
             // triggerElement.addEventListener(scenario.event,animApplicator());
             triggerElement.addEventListener(scenario.event,()=>{
-                console.log('Olay tetiklendi')
                 this.animApplicator(boxData,scenarioName,animationData);
             });
 
-            document.querySelector("#box_" + boxData.content_id).addEventListener('animationend', () => {
+            document.querySelector("#box_" + boxData.content_id).addEventListener('animationend', (event) => {
                     if (boxData.animations[animationData.animation_name[0]].remove_after==="true" || boxData.animations[animationData.animation_name[this.switchPositionConvertor(boxData.scenarios[scenarioName].event_source+'_'+boxData.content_id)]].remove_after===true) {
-                        this.removeBox(boxData)
+                        this.removeBox(event,boxData)
                     }
 
                     if(animIndex===scenario.animations.length-1){
@@ -222,10 +228,10 @@ console.log('Anim applicatopr cagirildi')
                 }
             );
         })
+        //console.log(scenario)
         //exceptions (for event bubbling)
         scenario.except.forEach(itemIdPrefix=>{
             document.querySelector(itemIdPrefix +'_' + boxData.content_id).addEventListener(scenario.event,(event)=>{
-                console.log('exceptler haric tutuldu')
                 event.stopPropagation();
             })
         })
@@ -237,7 +243,8 @@ console.log('Anim applicatopr cagirildi')
             this.scenarioRunner(boxData, scenarioName);
         });
     },
-    removeBox(boxData) {
+    removeBox(event,boxData) {
+        let target = event.target;
         if (boxData.backdrop === true || boxData.backdrop === "true") {
             document.querySelector('#backdrop_' + boxData.content_id).remove();
         } else {
