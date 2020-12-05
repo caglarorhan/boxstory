@@ -168,9 +168,9 @@ console.log('Anim applicatopr cagirildi')
                 console.log('Okunan backdrop degeri:'+ boxData.backdrop)
                 if(boxData.backdrop === true || boxData.backdrop ==='true'){
                     console.log('backdrop var')
-                    document.querySelector('#backdrop_' + boxData.content_id).style.display='block';
+                    document.querySelector('#backdrop_' + boxData.content_id).style.display='';
                 }
-                document.querySelector('#box_' + boxData.content_id).style.display='block';
+                document.querySelector('#box_' + boxData.content_id).style.display='';
 
                 document.querySelector("#box_" + boxData.content_id).classList.add(animationData.animation_name[this.switchPositionConvertor(boxData.scenarios[scenarioName].event_source+'_'+boxData.content_id)] + "_" + boxData.content_id);
             });
@@ -185,7 +185,6 @@ console.log('Anim applicatopr cagirildi')
         return (document.querySelector(switchID) && document.querySelector(switchID).checked)?1:0;
     },
     scenarioRunner(boxData, scenarioName){
-
         let scenario = boxData.scenarios[scenarioName];
         const triggerElement = (scenario.event_source!=="window")?document.querySelector(scenario.event_source +'_' + boxData.content_id):document;
 
@@ -195,6 +194,7 @@ console.log('Anim applicatopr cagirildi')
             this.createAnimation(boxData, animationData); //CSS animasyonlari olusturulup style icine gomuldu
 
             if(scenario.event_source==="window" && scenario.event==='load'){ // window.load ise dogrudan class ekle (CSS animasyon olusmustu zaten)
+                document.querySelector("#backdrop_" + boxData.content_id).style.display='';
                 document.querySelector("#box_" + boxData.content_id).style.display='';
                 document.querySelector("#box_" + boxData.content_id).classList.add(animationData.animation_name + "_" + boxData.content_id);
             }
@@ -225,6 +225,7 @@ console.log('Anim applicatopr cagirildi')
         //exceptions (for event bubbling)
         scenario.except.forEach(itemIdPrefix=>{
             document.querySelector(itemIdPrefix +'_' + boxData.content_id).addEventListener(scenario.event,(event)=>{
+                console.log('exceptler haric tutuldu')
                 event.stopPropagation();
             })
         })

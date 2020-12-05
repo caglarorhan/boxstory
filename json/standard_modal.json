@@ -36,8 +36,8 @@
     },
     "scenarios": {
       "leaving_window":{
-        "event_source": "#downloadModalTriggerButton",
-        "event": "click",
+        "event_source": "window",
+        "event": "load",
         "animations": [
           {
             "animation_name":["fly-down"],
