@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8f45549-cdb8-4c25-91f1-1bb3a2e2f8e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/html/box_at_bottom.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/box_at_left.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html/box_at_top.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/box_at_top.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/banner.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bottom.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/box_at_left.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/boxstory.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/boxstory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modal.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/box_at_bottom.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,16 +34,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\boxstory\json" />
+      <recent name="C:\xampp\htdocs\boxstory\html" />
+      <recent name="C:\xampp\htdocs\boxstory" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\boxstory\img" />
       <recent name="C:\xampp\htdocs\boxstory\html" />
       <recent name="C:\xampp\htdocs\boxstory\js" />
       <recent name="C:\xampp\htdocs\boxstory\json" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\boxstory\json" />
-      <recent name="C:\xampp\htdocs\boxstory\html" />
-      <recent name="C:\xampp\htdocs\boxstory" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -71,7 +67,8 @@
       <workItem from="1606878736064" duration="8295000" />
       <workItem from="1606920447501" duration="13514000" />
       <workItem from="1607006631915" duration="8706000" />
-      <workItem from="1607101536980" duration="12312000" />
+      <workItem from="1607101536980" duration="12430000" />
+      <workItem from="1607207378990" duration="391000" />
     </task>
     <servers />
   </component>

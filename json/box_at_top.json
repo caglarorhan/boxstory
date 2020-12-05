@@ -1,0 +1,64 @@
+[
+  {
+    "show": true,
+    "life_hour": 0.001,
+    "content_id": "459845t8yr34",
+    "side": "top",
+    "position": "fixed",
+    "z_index": "900",
+    "width": "500px",
+    "height": "300px",
+    "top": "auto",
+    "left": "auto",
+    "bottom": "",
+    "margin": "auto",
+    "bgColor": "pink",
+    "border": "",
+    "border_radius": "0",
+    "box_shadow": "",
+    "backdrop": "true",
+    "backdrop_specs": {
+      "rgba": "rgba(0,0,0,0.5)"
+    },
+    "remove_condition": {"condition": "timer", "value": 1},
+    "content": "<div style='width: 500px; text-align: center; margin:0 auto; height:100%; background-color: deeppink'><div style='text-align: left'>Deneme icerigi buraya gelecek</div><\/div>",
+    "animations": {
+      "be": {
+        "animation_specs": {
+          "animation-delay": "",
+          "animation-duration": "2s",
+          "animation-direction": "",
+          "animation-play-state": ""
+        },
+        "keyframes": "0% {} 100% {}",
+        "remove_after":"false"
+      }
+    },
+    "scenarios": {
+      "first-load":{
+        "event_source": "window",
+        "event": "load",
+        "animations": [
+          {
+            "animation_name":["be"],
+            "repetitive":"true"
+          }
+        ],
+        "except":["#box"]
+      }
+    },
+    "close_button": "true",
+    "close_button_content": "<img src=\"https:\/\/www.ecanta.com.tr\/sources\/img\/close.svg\">",
+    "close_button_specs": {
+      "top": "0",
+      "right": "0",
+      "height": "20px",
+      "width": "20px",
+      "padding": "5px",
+      "margin": "1px",
+      "bgColor": "white",
+      "border": "0 solid black",
+      "title": "Kapat"
+    }
+  }
+]
