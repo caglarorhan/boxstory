@@ -207,7 +207,6 @@ const boxStory = {
                         this.removeBox(event, boxData)
                     }
                     if (animIndex === scenario.animations.length - 1) {
-                        //senaryonun son animasyonu ve bu animasyon repetetive degilse eventlistener iptal edilecek
                         let isRepetitive = scenario.animations[animIndex].repetitive
                         if (isRepetitive === "false" || isRepetitive === false) {
                             triggerElement.removeEventListener(scenario.event, this.animApplicator, {passive: false});
