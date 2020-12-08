@@ -1,0 +1,73 @@
+[
+  {
+    "show": true,
+    "life_hour": 1,
+    "content_id": "2312-t45u984t5u5",
+    "side": "",
+    "position": "relative",
+    "width": "100%",
+    "height": "134px",
+    "top": "0",
+    "left": "auto",
+    "bottom": "",
+    "margin": "0px auto",
+    "z_index": "102",
+    "bgColor": "transparent",
+    "border": "0px solid #ccc",
+    "border_radius": "3px",
+    "box_shadow": "0px 0px 0px black",
+    "backdrop": "false",
+    "backdrop_specs": {
+      "rgba": "rgba(0,0,0,0.5)"
+    },
+    "remove_condition": {
+      "condition": "timer",
+      "value": 1
+    },
+    "content": "<div style='background-color: #FFFFFF;'><center><a href='https:\/\/s69.wdc.center\/go.php?cc=2359&b_code=654&go=http:\/\/www.newline4.com\/sale.php'><img width='1150' src='http:\/\/login.wdc.studio\/software\/69\/template_preview\/5.jpg' \/><\/a><\/center><\/div>",
+    "animations": {
+      "be": {
+        "animation_specs": {
+          "animation-delay": "",
+          "animation-duration": "5s",
+          "animation-direction": "",
+          "animation-play-state": ""
+        },
+        "keyframes": "0% {transform: translateY(-135px);} 100% {transform: translateY(0);}",
+        "remove_after": "false"
+      }
+    },
+    "scenarios": {
+      "first-load": {
+        "event_source": "window",
+        "event": "load",
+        "also_apply_to": ["body"],
+        "animations": [
+          {
+            "animation_name": [
+              "be"
+            ],
+            "repetitive": "true"
+          }
+        ],
+        "except": [
+          "#box"
+        ]
+      }
+    },
+    "close_animation": "",
+    "close_button": "false",
+    "close_button_content": "<img src=\"https:\\\/\\\/www.ecanta.com.tr\\\/sources\\\/img\\\/close.svg\">",
+    "close_button_specs": {
+      "top": "-31px",
+      "right": "-1px",
+      "height": "30px",
+      "width": "30px",
+      "padding": "5px",
+      "margin": "1px",
+      "bgColor": "white",
+      "border": "0 solid black",
+      "title": "Kapat"
+    }
+  }
+]

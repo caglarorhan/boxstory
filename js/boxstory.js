@@ -170,6 +170,7 @@ const boxStory = {
 
                     document.querySelector("#box_" + boxData.content_id).classList.add(animationData.animation_name[this.switchPositionConvertor(boxData.scenarios[scenarioName].event_source + '_' + boxData.content_id)] + "_" + boxData.content_id);
                 });
+
             });
         } else {
             document.querySelector('#box_' + boxData.content_id).style.display = 'block';
@@ -196,6 +197,11 @@ const boxStory = {
 
                 document.querySelector("#box_" + boxData.content_id).style.display = '';
                 document.querySelector("#box_" + boxData.content_id).classList.add(animationData.animation_name + "_" + boxData.content_id);
+                if(scenario.also_apply_to.length>0){
+                    scenario.also_apply_to.forEach(targetTag=>{
+                        document.querySelector(targetTag).classList.add(animationData.animation_name + "_" + boxData.content_id);
+                    })
+                }
             }
 
             triggerElement.addEventListener(scenario.event, () => {

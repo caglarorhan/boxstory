@@ -20,7 +20,10 @@
     "backdrop_specs": {
       "rgba": "rgba(0,0,0,0.5)"
     },
-    "remove_condition": {"condition": "timer", "value": 1},
+    "remove_condition": {
+      "condition": "timer",
+      "value": 1
+    },
     "content": "<div style='width: 500px; text-align: center; margin:0 auto; height:100%; background-color: deeppink'><div style='text-align: left'>Deneme icerigi buraya gelecek</div><\/div>",
     "animations": {
       "be": {
@@ -31,20 +34,24 @@
           "animation-play-state": ""
         },
         "keyframes": "0% {} 100% {}",
-        "remove_after":"false"
+        "remove_after": "false"
       }
     },
     "scenarios": {
-      "first-load":{
+      "first-load": {
         "event_source": "window",
         "event": "load",
         "animations": [
           {
-            "animation_name":["be"],
-            "repetitive":"true"
+            "animation_name": [
+              "be"
+            ],
+            "repetitive": "true"
           }
         ],
-        "except":["#box"]
+        "except": [
+          "#box"
+        ]
       }
     },
     "close_button": "true",
