@@ -49,8 +49,8 @@ const boxStory = {
         this.resizeTracker(boxData);
     },
     positionReCalculator(boxData) {
-        let widthOfBox = boxData.width.includes('%') ? boxStory.vw() * (parseInt(boxData.width) / 100) : boxData.width;
-        let leftOfBox = boxData.left.includes('auto') ? ((boxStory.vw() - parseInt(widthOfBox)) / 2) : boxData.left;
+        let widthOfBox = boxData.width.includes('%') ? this.vw() * (parseInt(boxData.width) / 100) : boxData.width;
+        let leftOfBox = boxData.left.includes('auto') ? ((this.vw() - parseInt(widthOfBox)) / 2) : boxData.left;
         let topOfBox = parseInt(boxData.top);
         let isThereAnySwitch = 0;
 
@@ -65,9 +65,9 @@ const boxStory = {
 
         switch (boxData.side) {
             case "right":
-                leftOfBox = boxStory.vw() - parseInt(widthOfBox);
+                leftOfBox = this.vw() - parseInt(widthOfBox);
                 if (Boolean(isThereAnySwitch)) {
-                    leftOfBox = boxStory.vw();
+                    leftOfBox = this.vw();
                 }
                 break;
             case "left":
@@ -77,9 +77,9 @@ const boxStory = {
                 }
                 break;
             case "bottom":
-                topOfBox = boxStory.vh() - parseInt(boxData.height);
+                topOfBox = this.vh() - parseInt(boxData.height);
                 if (Boolean(isThereAnySwitch)) {
-                    topOfBox = boxStory.vh();
+                    topOfBox = this.vh();
                 }
                 break;
             case "top":
@@ -149,7 +149,7 @@ const boxStory = {
                     expired = new Date().getTime() - parseInt(registeredDateTime) > 0
                 }
                 if (jsonData.show && expired) {
-                    boxStory.createBox(jsonData);
+                    this.createBox(jsonData);
                     this.action(jsonData)
                 } else {
                     return false;
@@ -232,6 +232,6 @@ const boxStory = {
         } else {
             document.querySelector('#box_' + boxData.content_id).remove();
         }
-        window.localStorage.setItem('box_' + boxData.content_id, boxStory.expDateTime(boxData.life_hour));
+        window.localStorage.setItem('box_' + boxData.content_id, this.expDateTime(boxData.life_hour));
     }
 }
