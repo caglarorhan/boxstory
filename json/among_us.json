@@ -35,7 +35,7 @@
           "animation-direction": "",
           "animation-play-state": ""
         },
-        "keyframes": "0% {transform: translateY(-135px);} 100% {transform: translateY(0);}",
+        "keyframes": "0% {} 100% {}",
         "remove_after": "false"
       }
     },
@@ -43,7 +43,7 @@
       "first-load": {
         "event_source": "window",
         "event": "load",
-        "also_apply_to": ["body"],
+        "also_apply_to": [],
         "animations": [
           {
             "animation_name": [
