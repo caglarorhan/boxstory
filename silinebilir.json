@@ -1,22 +1,22 @@
 [
   {
     "show": true,
-    "life_hour": 0.001,
-    "content_id": "459845t8yr34",
-    "side": "top",
-    "position": "fixed",
-    "z_index": "900",
-    "width": "500px",
-    "height": "300px",
-    "top": "auto",
+    "life_hour": 1,
+    "content_id": "2312-y65u832ei0t34",
+    "side": "",
+    "position": "relative",
+    "width": "863px",
+    "height": "432px",
+    "top": "0",
     "left": "auto",
     "bottom": "",
-    "margin": "auto",
-    "bgColor": "pink",
-    "border": "",
-    "border_radius": "0",
-    "box_shadow": "",
-    "backdrop": "false",
+    "margin": "200px auto",
+    "z_index": "10000",
+    "bgColor": "white",
+    "border": "0px solid #ccc",
+    "border_radius": "0px",
+    "box_shadow": "0px 0px 0px black",
+    "backdrop": "true",
     "backdrop_specs": {
       "rgba": "rgba(0,0,0,0.5)"
     },
@@ -24,16 +24,16 @@
       "condition": "timer",
       "value": 1
     },
-    "content": "<div style='width: 500px; text-align: center; margin:0 auto; height:100%; background-color: deeppink'><div style='text-align: left'>Deneme icerigi buraya gelecek</div><\/div>",
+    "content": "<iframe src=\"https:\/\/s69.wdc.center\/forms\/2312\/1\/index.php\" style=\"width: 884px; height: 432px;\" frameBorder=\"0\"><\/iframe>",
     "animations": {
       "be": {
         "animation_specs": {
           "animation-delay": "",
-          "animation-duration": "2s",
+          "animation-duration": "1s",
           "animation-direction": "",
           "animation-play-state": ""
         },
-        "keyframes": "0% {} 100% {}",
+        "keyframes": "0% {transform: translateY(-135px);} 100% {transform: translateY(0px);}",
         "remove_after": "false"
       }
     },
@@ -41,6 +41,9 @@
       "first-load": {
         "event_source": "window",
         "event": "load",
+        "also_apply_to": [
+          "body"
+        ],
         "animations": [
           {
             "animation_name": [
@@ -54,13 +57,14 @@
         ]
       }
     },
+    "close_animation": "",
     "close_button": "true",
-    "close_button_content": "<img src=\"https:\/\/www.ecanta.com.tr\/sources\/img\/close.svg\">",
+    "close_button_content": "<img src=\"https:\\\/\\\/www.ecanta.com.tr\\\/sources\\\/img\\\/close.svg\">",
     "close_button_specs": {
-      "top": "0",
-      "right": "0",
-      "height": "20px",
-      "width": "20px",
+      "top": "-31px",
+      "right": "-1px",
+      "height": "30px",
+      "width": "30px",
       "padding": "5px",
       "margin": "1px",
       "bgColor": "white",

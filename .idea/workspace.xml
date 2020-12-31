@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8f45549-cdb8-4c25-91f1-1bb3a2e2f8e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/html/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/json/test.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html/among_us.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/among_us.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/silinebilir.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/boxstory.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/boxstory.js" afterDir="false" />
@@ -37,16 +38,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\boxstory\html" />
+      <recent name="C:\xampp\htdocs\boxstory\json" />
+      <recent name="C:\xampp\htdocs\boxstory" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\boxstory\img" />
       <recent name="C:\xampp\htdocs\boxstory\html" />
       <recent name="C:\xampp\htdocs\boxstory\js" />
       <recent name="C:\xampp\htdocs\boxstory\json" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\boxstory\html" />
-      <recent name="C:\xampp\htdocs\boxstory\json" />
-      <recent name="C:\xampp\htdocs\boxstory" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -73,7 +74,9 @@
       <workItem from="1607101536980" duration="12430000" />
       <workItem from="1607207378990" duration="4157000" />
       <workItem from="1607379748911" duration="11794000" />
-      <workItem from="1607438645606" duration="797000" />
+      <workItem from="1607438645606" duration="6089000" />
+      <workItem from="1608184401862" duration="621000" />
+      <workItem from="1609372206112" duration="5986000" />
     </task>
     <servers />
   </component>
