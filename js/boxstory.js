@@ -40,12 +40,12 @@ const boxStory = {
             document.querySelector('#backdrop_' + boxData.content_id).append(box);
             document.querySelector('#backdrop_' + boxData.content_id).style.display = 'none';
         }else if(boxData.target_host!==null && boxData.target_part!==null){
-            console.log(boxData)
+
            let target_host =
                 document.querySelectorAll('#'+boxData.target_host)[0] ??
                 document.querySelector('.'+boxData.target_host) ??
                 document.querySelectorAll('*[name='+boxData.target_host+']')[0]
-            console.log(target_host)
+
             target_host.insertAdjacentElement(boxData.target_part, box);
         }else {
             document.body.insertAdjacentElement('afterbegin', box);
