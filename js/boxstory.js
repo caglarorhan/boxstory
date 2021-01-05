@@ -39,14 +39,19 @@ const boxStory = {
         if (document.querySelector('#backdrop_' + boxData.content_id)) {
             document.querySelector('#backdrop_' + boxData.content_id).append(box);
             document.querySelector('#backdrop_' + boxData.content_id).style.display = 'none';
-        }else if(boxData.target_host!==null && boxData.target_part!==null){
+        }else if((boxData.target_host.length>0)){
+try{
+    let target_host =
+        document.querySelectorAll('#'+boxData.target_host)[0] ??
+        document.querySelectorAll('.'+boxData.target_host)[0] ??
+        document.querySelectorAll('*[name='+boxData.target_host+']')[0];
 
-           let target_host =
-                document.querySelectorAll('#'+boxData.target_host)[0] ??
-                document.querySelector('.'+boxData.target_host) ??
-                document.querySelectorAll('*[name='+boxData.target_host+']')[0]
+    target_host.insertAdjacentElement(boxData.target_part, box);
+}
+catch{
+    console.log(boxData.target_host, ' verisinin geldigine emin olunuz!')
+}
 
-            target_host.insertAdjacentElement(boxData.target_part, box);
         }else {
             document.body.insertAdjacentElement('afterbegin', box);
             document.querySelector('#box_' + boxData.content_id).style.display = 'none';
@@ -212,7 +217,7 @@ const boxStory = {
 
                 document.querySelector("#box_" + boxData.content_id).style.display = '';
                 document.querySelector("#box_" + boxData.content_id).classList.add(animationData.animation_name + "_" + boxData.content_id);
-                if(scenario.also_apply_to.length>0){
+                if(scenario.also_apply_to && scenario.also_apply_to.length>0){
                     scenario.also_apply_to.forEach(targetTag=>{
                         document.querySelector(targetTag).classList.add(animationData.animation_name + "_" + boxData.content_id);
                     })

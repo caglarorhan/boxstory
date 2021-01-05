@@ -16,6 +16,8 @@
     "border": "",
     "border_radius": "0",
     "box_shadow": "",
+    "target_host": "",
+    "target_part": "",
     "backdrop": "false",
     "backdrop_specs": {
       "rgba": "rgba(0,0,0,0.5)"
