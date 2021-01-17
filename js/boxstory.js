@@ -145,7 +145,7 @@ catch{
                                
             `;
             // CSS rule control
-            if (!Object.values(document.styleSheets).map(rlz => rlz.rules[0].selectorText).includes("." + animationName + "_" + boxData.content_id)) {
+            if (!Object.values(document.styleSheets).map(rlz =>{try{return rlz.rules[0].selectorText}catch(err){}}).includes("." + animationName + "_" + boxData.content_id)) {
                 document.head.append(targetCSS);
             }
         })

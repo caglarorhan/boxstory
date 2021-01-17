@@ -1,0 +1,75 @@
+[
+  {
+    "show": true,
+    "life_hour": "144",
+    "content_id": "2265-y6599u8e23t43",
+    "side": "",
+    "position": "relative",
+    "width": "100%",
+    "height": "80px",
+    "top": "0",
+    "left": "auto",
+    "bottom": "",
+    "margin": "0px auto",
+    "z_index": "102",
+    "bgColor": "#4ea774",
+    "border": "0px solid #ccc",
+    "border_radius": "3px",
+    "box_shadow": "0px 0px 0px black",
+    "target_host": "",
+    "target_part": "",
+    "backdrop": "false",
+    "backdrop_specs": {
+      "rgba": "rgba(0,0,0,0.5)"
+    },
+    "remove_condition": {
+      "condition": "timer",
+      "value": 1
+    },
+    "content": "<style>\r\n@media(max-width: 767px) {\r\n\t.kampanya\r\n\t{\r\n\t\tdisplay: none;\r\n\t}\r\n\t.kampanya IMG\r\n\t{\r\n\t\twidth: auto;\r\n\t}\r\n}\r\n\r\n@media (min-width: 768px){\r\n\r\n\t.kampanya\r\n\t{\r\n\t\tdisplay: block;\r\n\t}\r\n\t.kampanya IMG\r\n\t{\r\n\t\twidth: 100%;\r\n\t}\r\n\r\n}\r\n\r\n@media (min-width: 992px) {\r\n\t.kampanya\r\n\t{\r\n\t\tdisplay: block;\r\n\t\ttext-align: center;\r\n\t}\r\n\t.kampanya IMG\r\n\t{\r\n\t\twidth: 100%;\r\n\t}\r\n\r\n\r\n}\r\n\r\n\r\n@media (min-width: 1200px) {\r\n\t.kampanya\r\n\t{\r\n\t\tdisplay: block;\r\n\t\ttext-align: center;\r\n\t}\r\n\t.kampanya IMG\r\n\t{\r\n\t\twidth: auto;\r\n\t}\r\n\r\n\r\n}\r\n\r\n\r\n<\/style>\r\n\r\n<div class=\"kampanya\"><a href=\"https:\/\/s69.wdc.center\/go.php?cc=2265&b_code=30&go=https:\/\/www.ecanta.com.tr\/kadin+sirt-cantasi\"><img src=\"https:\/\/cdn.wdc.studio\/2265\/banners\/ECANTA_manset_banner_WEB_1170x80px_140121.jpg\" width=\"1170\" height=\"80\" alt=\"Yeni Y\u0131l Kampanyas\u0131\"><\/a><\/div>",
+    "animations": {
+      "be": {
+        "animation_specs": {
+          "animation_delay": "",
+          "animation_duration": "1s",
+          "animation_direction": "",
+          "animation_play_state": ""
+        },
+        "keyframes": "0%{transform:scale(0);animation-timing-function:ease-in;opacity:0}38%{transform:scale(1);animation-timing-function:ease-out;opacity:1}55%{transform:scale(.7);animation-timing-function:ease-in}72%{transform:scale(1);animation-timing-function:ease-out}81%{transform:scale(.84);animation-timing-function",
+        "remove_after": "false"
+      }
+    },
+    "scenarios": {
+      "first-load": {
+        "event_source": "window",
+        "event": "load",
+        "also_apply_to": [],
+        "animations": [
+          {
+            "animation_name": [
+              "be"
+            ],
+            "repetitive": "true"
+          }
+        ],
+        "except": [
+          "#box"
+        ]
+      }
+    },
+    "close_animation": "",
+    "close_button": "false",
+    "close_button_content": "<img src='https:\/\/www.ecanta.com.tr\/sources\/img\/close.svg'>",
+    "close_button_specs": {
+      "top": "-31px",
+      "right": "-1px",
+      "height": "30px",
+      "width": "30px",
+      "padding": "5px",
+      "margin": "1px",
+      "bgColor": "white",
+      "border": "0 solid black",
+      "title": "Kapat"
+    }
+  }
+]
