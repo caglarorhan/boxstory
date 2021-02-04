@@ -76,32 +76,37 @@ catch{
             })
         })
 
-        switch (boxData.side) {
-            case "right":
-                leftOfBox = this.vw() - parseInt(widthOfBox);
-                if (Boolean(isThereAnySwitch)) {
-                    leftOfBox = this.vw();
-                }
-                break;
-            case "left":
-                leftOfBox = 0;
-                if (Boolean(isThereAnySwitch)) {
-                    leftOfBox = 0 - parseInt(widthOfBox);
-                }
-                break;
-            case "bottom":
-                topOfBox = this.vh() - parseInt(boxData.height);
-                if (Boolean(isThereAnySwitch)) {
-                    topOfBox = this.vh();
-                }
-                break;
-            case "top":
-                topOfBox = 0;
-                if (Boolean(isThereAnySwitch)) {
-                    topOfBox = 0 - parseInt(boxData.height);
-                }
-                break;
-        }
+boxData.side.split(',').forEach(side=>{
+    switch (side) {
+        case "right":
+            leftOfBox = this.vw() - parseInt(widthOfBox);
+            if (Boolean(isThereAnySwitch)) {
+                leftOfBox = this.vw();
+            }
+            break;
+        case "left":
+            leftOfBox = 0;
+            if (Boolean(isThereAnySwitch)) {
+                leftOfBox = 0 - parseInt(widthOfBox);
+            }
+            break;
+        case "bottom":
+            topOfBox = this.vh() - parseInt(boxData.height);
+            console.log(`${this.vh()}-${parseInt(boxData.height)}`)
+            if (Boolean(isThereAnySwitch)) {
+                topOfBox = this.vh();
+            }
+            break;
+        case "top":
+            topOfBox = 0;
+            if (Boolean(isThereAnySwitch)) {
+                topOfBox = 0 - parseInt(boxData.height);
+            }
+            break;
+    }
+
+})
+
         return {
             "widthOfBox": widthOfBox,
             "leftOfBox": leftOfBox + 'px',
@@ -111,11 +116,10 @@ catch{
     },
     resizeTracker(boxData) {
         window.addEventListener('resize', () => {
-
             let boxRecalculated = this.positionReCalculator(boxData);
-            document.querySelector('#box_' + boxData.content_id).style.left = boxRecalculated.leftOfBox + 'px';
-            document.querySelector('#box_' + boxData.content_id).style.top = boxRecalculated.topOfBox + 'px';
-            document.querySelector('#box_' + boxData.content_id).style.width = boxRecalculated.widthOfBox + 'px';
+            document.querySelector('#box_' + boxData.content_id).style.left = boxRecalculated.leftOfBox;
+            document.querySelector('#box_' + boxData.content_id).style.top = boxRecalculated.topOfBox;
+            document.querySelector('#box_' + boxData.content_id).style.width = boxRecalculated.widthOfBox;
 
         })
     },
